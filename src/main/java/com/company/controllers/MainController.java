@@ -1,28 +1,28 @@
 package com.company.controllers;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.company.domain.Advertisement;
+import com.company.domain.Views;
+import com.company.repo.AdvertisementRepo;
+import com.fasterxml.jackson.annotation.JsonView;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("mainpage")
 public class MainController {
 
-    private List<Map<String, String>> messages = new ArrayList<Map<String,String>>(){{
-       add(new HashMap<String, String>() {{put("id", "1"); put("message", "msg");}});
-       add(new HashMap<String, String>() {{put("id", "2"); put("message", "m");}});
-       add(new HashMap<String, String>() {{put("id", "3"); put("message", "ms");}});
-    }};
+    private final AdvertisementRepo advertisementRepo;
 
-    @GetMapping()
-    public List<Map<String, String>> index(){
-        return messages;
+    @Autowired
+    public MainController(AdvertisementRepo advertisementRepo) {
+        this.advertisementRepo = advertisementRepo;
     }
 
+    @GetMapping()
+    @JsonView(Views.ShortInformation.class)
+    public List<Advertisement> index(){
+        return advertisementRepo.findAll();
+    }
 }
