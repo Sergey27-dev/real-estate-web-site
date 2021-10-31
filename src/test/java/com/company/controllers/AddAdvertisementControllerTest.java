@@ -20,9 +20,6 @@ class AddAdvertisementControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-//    @Autowired
-//    private AdvertisementRepo repo;
-
     @Autowired
     ObjectMapper objectMapper;
 
@@ -51,8 +48,11 @@ class AddAdvertisementControllerTest {
                 .andExpect(jsonPath("$.addres").value("Космический проспект 20"))
                 .andExpect(jsonPath("$.description").value("Description"))
                 .andExpect(jsonPath("$.floor").value("5"))
-                .andExpect(jsonPath("$.totalFloor").value("10"))
+                .andExpect(jsonPath("$.totalFloors").value("10"))
                 .andExpect(jsonPath("$.numberOfRooms").value("2"));
 
+
     }
+
+
 }

@@ -1,4 +1,11 @@
 com/company/domain/Views$FullInformation.class
+com/company/RealEstateWebSiteApplication.class
+com/company/controllers/AddAdvertisementController.class
+com/company/repo/AdvertisementRepo.class
 com/company/domain/Views$Id.class
 com/company/domain/Views.class
+com/company/domain/Advertisement.class
+com/company/controllers/AdvertisementsController.class
 com/company/domain/Views$ShortInformation.class
+com/company/controllers/MainController.class
+com/company/controllers/MainPageController.class
