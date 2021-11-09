@@ -9,5 +9,6 @@ Vue.use(VueResource)
 
 new Vue({
     el: '#app',
-    render: a => a(App)
+    render: a => a(App),
+    vuetify: new Vuetify({})
 })

@@ -19,6 +19,7 @@
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.0",
     "deepmerge": "^4.2.2",
+    "file-loader": "^6.2.0",
     "sass": "~1.32",
     "sass-loader": "^12.3.0",
     "vue-loader": "^15.9.8",
