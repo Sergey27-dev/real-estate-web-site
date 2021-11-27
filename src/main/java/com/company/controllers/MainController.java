@@ -1,11 +1,13 @@
 package com.company.controllers;
 
 
+import com.company.domain.User;
 import com.company.domain.Views;
 import com.company.repo.AdvertisementRepo;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,11 +32,12 @@ public class MainController {
 
     @GetMapping
     @JsonView(Views.ShortInformation.class)
-    public String main(Model model) {
+    public String main(Model model, @AuthenticationPrincipal User user) {
 
         HashMap<Object, Object> data = new HashMap<>();
 
         data.put("adv", advertisementRepo.findAll());
+        data.put("profile", user);
 
         model.addAttribute("frontendData", data);
 

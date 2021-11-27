@@ -24,9 +24,8 @@
                   height="200px"
                   src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
               >
-                <v-card-title>Top 10 Australian beaches</v-card-title>
+                <v-card-title>{{adv.name}}</v-card-title>
               </v-img>
-              <v-card-title>{{adv.name}}</v-card-title>
               <v-card-title>{{adv.price}}</v-card-title>
 
 

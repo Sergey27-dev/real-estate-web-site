@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <my-header/>
+    <my-header :profile="profile"/>
     <search-item/>
     <v-main>
       <v-container>
@@ -37,7 +37,8 @@ export default {
 
   data() {
     return {
-      advs: frontendData.adv,  // Сокращенная инфа об объекте
+      advs: frontendData.adv, // Сокращенная инфа об объекте
+      profile: frontendData.profile
       // logoPath: path.join(__dirname, 'src', 'main', 'webapp', 'resources', 'static', 'logo.png')
     }
   }

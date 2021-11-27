@@ -1,16 +1,33 @@
 <template>
   <v-container>
-      <v-row class="search">
+
+
+      <v-row class="ma-4">
+        <v-tabs
+            
+            align-with-title
+        >
+          <v-tab>Снять</v-tab>
+          <v-tab>Купить</v-tab>
+          <v-tab>Зарпрос</v-tab>
+        </v-tabs>
         <v-select
-            label="Квартира"
+            outlined
+
+            label="Тип жилья"
+            :items="type"
         ></v-select>
         <v-select
+            outlined
+            :items="rooms"
+            multiple
             label="Количество комнат"
         ></v-select>
         <v-text-field
+            outlined
             label="Цена"
         ></v-text-field>
-        <v-btn>Найти</v-btn>
+        <v-btn class="ma-2">Найти</v-btn>
       </v-row>
 
   </v-container>
@@ -21,12 +38,23 @@
 
 <script>
 export default {
+  data(){
+    return {
+      type: [
+          'Квартира', 'Дом'
+      ],
+
+      rooms: [
+          '1','2','3','4'
+      ]
+
+    }
+  },
+
   name: "SearchItem"
 }
 </script>
 
 <style scoped>
-.search {
-  padding: 20px;
-}
+
 </style>

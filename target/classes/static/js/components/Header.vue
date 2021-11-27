@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar max-height="50px">
+    <v-app-bar max-height="80px">
       <v-icon class="icon">near_me</v-icon>
       <v-app-bar-nav-icon>
 
@@ -8,12 +8,22 @@
 
       <v-spacer/>
       <v-icon class="icon">favorite</v-icon>
-      <v-btn>Войти</v-btn>
+      <div v-if="!profile">
+        <v-btn href="/login">Войти</v-btn>
+      </div>
+      <div v-else>
+        <v-btn>profile.name</v-btn>
+      </div>
+
     </v-app-bar>
 </template>
 
 <script>
 export default {
+  props: [
+    'profile'
+  ],
+
   name: "Header"
 }
 </script>
