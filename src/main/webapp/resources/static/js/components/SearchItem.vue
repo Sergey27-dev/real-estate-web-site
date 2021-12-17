@@ -9,7 +9,7 @@
         >
           <v-tab>Снять</v-tab>
           <v-tab>Купить</v-tab>
-          <v-tab>Зарпрос</v-tab>
+          <v-tab>Запрос</v-tab>
         </v-tabs>
         <v-select
             outlined

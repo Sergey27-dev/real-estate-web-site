@@ -12,7 +12,6 @@
       <v-container>
         <div class="mb-4"><h3>О нас</h3></div>
         <about-us/>
-
       </v-container>
     </v-main>
     <my-footer/>
@@ -45,7 +44,4 @@ export default {
 }
 
 </script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

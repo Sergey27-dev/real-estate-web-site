@@ -37,7 +37,7 @@ class AddAdvertisementControllerTest {
 
 
         mockMvc.perform(
-                        post("/new-adv")
+                        post("/adv")
                                 .content(objectMapper.writeValueAsString(advertisement))
                                 .contentType(MediaType.APPLICATION_JSON)
                 )

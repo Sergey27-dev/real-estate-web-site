@@ -1,7 +1,15 @@
 <template>
     <v-app-bar max-height="80px">
+      <v-img
+          class="mx-2"
+          src="logo.svg"
+          max-height="140"
+          max-width="140"
+          contain
+      ></v-img>
       <v-icon class="icon">near_me</v-icon>
       <v-app-bar-nav-icon>
+
 
       </v-app-bar-nav-icon>
       <v-card-text>8 (999) 999 99 99</v-card-text>
@@ -12,7 +20,7 @@
         <v-btn href="/login">Войти</v-btn>
       </div>
       <div v-else>
-        <v-btn>profile.name</v-btn>
+        <v-btn text="profile" href="/logout">{{profile.name}}</v-btn>
       </div>
 
     </v-app-bar>
@@ -23,6 +31,12 @@ export default {
   props: [
     'profile'
   ],
+
+  data(){
+    // return{
+    //   imgUrl:
+    // }
+  },
 
   name: "Header"
 }

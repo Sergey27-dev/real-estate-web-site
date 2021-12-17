@@ -1,5 +1,12 @@
 <template>
     <v-app-bar max-height="80px">
+      <v-img
+          class="mx-2"
+          src="logo.svg"
+          max-height="140"
+          max-width="140"
+          contain
+      ></v-img>
       <v-icon class="icon">near_me</v-icon>
       <v-app-bar-nav-icon>
 
