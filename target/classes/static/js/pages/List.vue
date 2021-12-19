@@ -1,11 +1,11 @@
 <template>
   <v-list>
     <my-header :profile="profile"/>
-    <search.-item/>
+    <search-item/>
     <v-main>
       <v-container>
         <h2>Объявления</h2>
-        <element :advs="advs"/>
+        <my-element :advs="advs"/>
       </v-container>
     </v-main>
     <my-footer/>
@@ -18,11 +18,11 @@ import SearchItem from "../components/SearchItem.vue";
 import AdvSlider from "../components/AdvSlider.vue";
 import AboutUs from "../components/AboutUs.vue";
 import MyFooter from "../components/Footer.vue"
-import Element from "../components/Element.vue";
+import MyElement from "../components/Element.vue";
 
 export default {
   components: {
-    Element,
+    MyElement,
     MyHeader,
     SearchItem,
     AdvSlider,

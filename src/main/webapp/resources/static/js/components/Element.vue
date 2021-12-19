@@ -21,7 +21,7 @@
 
             <v-img
                 height="200"
-                src="https://mykaleidoscope.ru/uploads/posts/2021-03/1616731497_9-p-krasivie-dorogie-kvartiri-11.jpg"
+                src="http://almode.ru/uploads/posts/2021-07/1627040454_32-almode_ru-p-dizainerskie-intereri-kvartir-33.jpg"
             ></v-img>
 
             <v-card-title>{{adv.name}}</v-card-title>
