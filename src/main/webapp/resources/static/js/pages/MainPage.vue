@@ -3,14 +3,8 @@
     <my-header :profile="profile"/>
     <search-item/>
     <v-main>
-      <button type="button" class = "btn btn-outline-light" @click="$router.push('/list')">Перейти к List</button>
-      <button type="button" class = "btn btn-outline-light" @click="$router.push('/item')">Перейти к item</button>
-
-        <div v-if="!profile">
-          <v-btn href="/list">Перейти к List</v-btn>
-        </div>
-      <router-link to="/list">Перейти к Foo</router-link>
       <v-container>
+        <v-btn href="/list">Перейти к List</v-btn>
         <h2>Лучшие предложения</h2>
         <div>Подберите подходящую квартиру или дом просмотрев лучшие предложения</div>
         <adv-slider :advs="advs"/>

@@ -5,20 +5,13 @@
             v-for="adv in advs"
             :key="adv.id"
             cols="4"
+            :adv="adv"
         >
           <v-card
               :loading="loading"
               class="mx-auto my-12"
               max-width="300"
           >
-            <template slot="progress">
-              <v-progress-linear
-                  color="deep-purple"
-                  height="10"
-                  indeterminate
-              ></v-progress-linear>
-            </template>
-
             <v-img
                 height="200"
                 src="http://almode.ru/uploads/posts/2021-07/1627040454_32-almode_ru-p-dizainerskie-intereri-kvartir-33.jpg"
@@ -36,6 +29,11 @@
             <v-divider class="mx-3"></v-divider>
 
             <v-card-title>{{adv.price}} р</v-card-title>
+            <router-link :to="{ name: 'itemPage', params: { id: adv.id } }" class="more-info" >
+              Подробнее о квартире
+            </router-link>
+
+
           </v-card>
         </v-col>
       </v-row>
@@ -45,7 +43,13 @@
 
 <script>
 export default {
-  props: ['advs'],
+  props: {
+    advs: {
+      type: Array,
+      default: () => []
+    }
+  },
+
   name: "Element"
 }
 </script>

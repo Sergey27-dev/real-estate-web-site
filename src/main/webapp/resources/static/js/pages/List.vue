@@ -5,6 +5,7 @@
     <v-main>
       <v-container>
         <h2>Объявления</h2>
+        <p>Объявлений найдено: {{advs.length}}</p>
         <my-element :advs="advs"/>
       </v-container>
     </v-main>

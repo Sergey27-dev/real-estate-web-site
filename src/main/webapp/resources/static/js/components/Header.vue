@@ -14,6 +14,9 @@
       </v-app-bar-nav-icon>
       <v-card-text>8 (999) 999 99 99</v-card-text>
 
+        <v-btn href="/list">Перейти к List</v-btn>
+        <v-btn href="/item">Перейти к Item</v-btn>
+
       <v-spacer/>
       <v-icon class="icon">favorite</v-icon>
       <div v-if="!profile">

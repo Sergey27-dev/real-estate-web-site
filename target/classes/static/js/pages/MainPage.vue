@@ -3,8 +3,6 @@
     <my-header :profile="profile"/>
     <search-item/>
     <v-main>
-      <button type="button" class = "btn btn-outline-light" @click="$router.push('/list')">Перейти к List</button>
-      <button type="button" class = "btn btn-outline-light" @click="$router.push('/item')">Перейти к item</button>
       <v-container>
         <h2>Лучшие предложения</h2>
         <div>Подберите подходящую квартиру или дом просмотрев лучшие предложения</div>
