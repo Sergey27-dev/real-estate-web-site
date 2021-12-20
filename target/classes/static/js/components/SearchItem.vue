@@ -1,7 +1,5 @@
 <template>
   <v-container>
-
-
       <v-row class="ma-4">
         <v-tabs
             
@@ -31,8 +29,6 @@
       </v-row>
 
   </v-container>
-
-
 
 </template>
 

@@ -2,6 +2,7 @@
     <v-app-bar max-height="80px">
       <v-icon class="icon">near_me</v-icon>
       <v-app-bar-nav-icon>
+        <v-img src="logo.png"></v-img>
 
 
       </v-app-bar-nav-icon>
@@ -24,12 +25,6 @@ export default {
   props: [
     'profile'
   ],
-
-  data(){
-    // return{
-    //   imgUrl:
-    // }
-  },
 
   name: "Header"
 }

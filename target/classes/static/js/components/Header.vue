@@ -2,6 +2,8 @@
     <v-app-bar max-height="80px">
       <v-icon class="icon">near_me</v-icon>
       <v-app-bar-nav-icon>
+        <v-img src="logo.png"></v-img>
+
 
       </v-app-bar-nav-icon>
       <v-card-text>8 (999) 999 99 99</v-card-text>
@@ -12,7 +14,7 @@
         <v-btn href="/login">Войти</v-btn>
       </div>
       <div v-else>
-        <v-btn>profile.name</v-btn>
+        <v-btn text="profile" href="/logout">{{profile.name}}</v-btn>
       </div>
 
     </v-app-bar>

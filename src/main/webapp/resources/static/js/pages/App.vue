@@ -15,6 +15,11 @@
 
       </v-container>
     </v-main>
+    <v-content>
+      <div>
+        <router-view></router-view>
+      </div>
+    </v-content>
     <my-footer/>
   </v-app>
 </template>
