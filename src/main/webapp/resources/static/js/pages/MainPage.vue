@@ -17,7 +17,6 @@
       </v-container>
       <v-divider style="margin: 50px" />
       <v-container>
-        <div class="mb-4"><h3>О нас</h3></div>
         <about-us/>
       </v-container>
     </v-main>

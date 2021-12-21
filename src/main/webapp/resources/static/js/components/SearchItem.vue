@@ -11,22 +11,27 @@
           <v-tab>Купить</v-tab>
           <v-tab>Запрос</v-tab>
         </v-tabs>
-        <v-select
-            outlined
-
-            label="Тип жилья"
-            :items="type"
-        ></v-select>
+        <div class="search">
+          <v-select
+              outlined
+              label="Тип жилья"
+              :items="type"
+          ></v-select>
+        </div>
+        <div class="search">
         <v-select
             outlined
             :items="rooms"
             multiple
             label="Количество комнат"
         ></v-select>
+        </div>
+        <div class="search">
         <v-text-field
             outlined
             label="Цена"
         ></v-text-field>
+        </div>
         <v-btn class="ma-2">Найти</v-btn>
       </v-row>
 
@@ -56,5 +61,8 @@ export default {
 </script>
 
 <style scoped>
-
+.search
+{
+  margin: 5px 5px;
+}
 </style>

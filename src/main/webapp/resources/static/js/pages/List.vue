@@ -4,7 +4,7 @@
     <search-item/>
     <v-main>
       <v-container>
-        <h2>Объявления</h2>
+        <h2 style="padding-left: 12px">Объявления</h2>
         <my-element :advs="advs"/>
       </v-container>
     </v-main>

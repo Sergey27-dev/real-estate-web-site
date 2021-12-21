@@ -1,8 +1,8 @@
 <template>
   <v-footer
       class="justify-center align-content-center align-center"
-
   >
+    <v-container>
       <v-row>
         <v-col cols="2" class="mr-3 ml-10">
           <div>ПОЛЕЗНЫЕ ССЫЛКИ</div>
@@ -13,7 +13,7 @@
               color="black"
               text
               rounded
-              class="my-2 mr-2"
+              class="my-1 mr-1"
           >
             {{ link }}
           </v-btn>
@@ -44,12 +44,15 @@
         <v-col cols="3">
           <div>СОЦИАЛЬНЫЕ СЕТИ</div>
           <v-divider/>
+          <div class="socialMedia">
+            <a href="https://www.youtube.com/" class="socialMedia__item"><img src="https://img.icons8.com/ios/50/000000/youtube-play.png"/></a>
+            <a href="https://www.instagram.com/" class="socialMedia__item"><img src="https://img.icons8.com/ios/50/000000/instagram-new--v1.png"/></a>
+            <a href="https://vk.com" class="socialMedia__item"><img src="https://img.icons8.com/ios-filled/50/000000/vk-circled.png"/></a>
+          </div>
 
         </v-col>
       </v-row>
-
-
-
+    </v-container>
   </v-footer>
 
 </template>
@@ -69,7 +72,6 @@ export default {
           'youtube',
           'facebook',
           'vk'
-
       ]
     }
   }
@@ -77,5 +79,10 @@ export default {
 </script>
 
 <style scoped>
-
+.socialMedia
+{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
 </style>

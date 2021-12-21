@@ -1,17 +1,13 @@
 <template>
     <v-app-bar max-height="80px">
-      <v-img
+      <a href="http://localhost:9000"><v-img
           class="mx-2"
           src="logo.svg"
           max-height="140"
           max-width="140"
           contain
-      ></v-img>
+      ></v-img></a>
       <v-icon class="icon">near_me</v-icon>
-      <v-app-bar-nav-icon>
-
-
-      </v-app-bar-nav-icon>
       <v-card-text>8 (999) 999 99 99</v-card-text>
 
       <v-spacer/>
@@ -22,8 +18,8 @@
       <div v-else>
         <v-btn text="profile" href="/logout">{{profile.name}}</v-btn>
       </div>
-
     </v-app-bar>
+
 </template>
 
 <script>
@@ -46,5 +42,4 @@ export default {
 .icon{
   padding: 15px;
 }
-
 </style>
