@@ -21,12 +21,11 @@
         <v-col cols="3" class="mr-1">
           <div>ОПЛАТА</div>
           <v-divider/>
-          <div>Продвижение объявлений на сайте можно оплатить любым удобным способом</div>
+          <div class="pay">Продвижение объявлений на сайте можно оплатить любым удобным способом</div>
         </v-col>
         <v-col cols="3" class="mr-1">
           <div>КОНТАКТЫ</div>
           <v-divider/>
-          <v-container >
             <v-row class="ma-3">
               <v-icon>phone</v-icon>
               <div>8 (999) 999 99 99</div>
@@ -39,7 +38,6 @@
               <v-icon>email</v-icon>
               <div>maison@gmail.com</div>
             </v-row>
-          </v-container>
         </v-col>
         <v-col cols="3">
           <div>СОЦИАЛЬНЫЕ СЕТИ</div>
@@ -84,5 +82,10 @@ export default {
   margin-top: 20px;
   display: flex;
   justify-content: space-around;
+}
+
+.pay
+{
+  margin-top: 10px;
 }
 </style>

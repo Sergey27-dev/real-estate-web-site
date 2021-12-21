@@ -2,64 +2,67 @@
   <v-list>
     <my-header :profile="profile"/>
     <v-main>
-      <v-container>
+      <div class="container">
         <v-container>
-          <v-img   max-height="300"
+          <v-container>
+            <v-img max-height="300"
                    max-width="500"
                    src="https://mykaleidoscope.ru/uploads/posts/2021-03/1616731497_9-p-krasivie-dorogie-kvartiri-11.jpg">
-            <template v-slot:placeholder>
-              <v-row
-                  class="fill-height ma-0"
-                  align="center"
-                  justify="center"
-              >
-                <v-progress-circular
-                    indeterminate
-                    color="grey lighten-5"
-                ></v-progress-circular>
-              </v-row>
-            </template>
-          </v-img>
-          <v-col cols="2" sm="6">
-            <h2 class="pa-ma-40 ">О квартире</h2>
-            <v-divider></v-divider>
-            <v-hover>
-              <v-card
-                  height="40"
-                  width="130"
-                  class="price"
-              >
-                <v-card-text style="padding: 10px">
-                  <div class="price__text">50000000 р</div>
-                </v-card-text>
-              </v-card>
-            </v-hover>
+              <template v-slot:placeholder >
+                <v-row
+                    class="fill-height ma-0"
+                    align="center"
+                    justify="center"
+                >
+                  <v-progress-circular
+                      indeterminate
+                      color="grey lighten-5"
+                  ></v-progress-circular>
+                </v-row>
+              </template>
+            </v-img>
+            <v-col cols="2" sm="6">
+              <h2 class="pa-ma-40 ">О квартире</h2>
+              <v-divider></v-divider>
+              <v-hover>
+                <v-card
+                    height="40"
+                    width="130"
+                    class="price"
+                >
+                  <v-card-text style="padding: 10px">
+                    <div class="price__text">{{rezult.price}} р</div>
+                  </v-card-text>
+                </v-card>
+              </v-hover>
 
-            <div class="infoOfApp">
-              <div class="infoOfApp__left">
-                <div class="infoOfApp__item">Сообщение: 3432432</div>
-                <div class="infoOfApp__item">Адресс: Малютина 5</div>
-                <div class="infoOfApp__item">Этаж: 5 / 5</div>
+              <div class="infoOfApp">
+                <div class="infoOfApp__left">
+                  <div class="infoOfApp__item">Сообщение: {{rezult.name}}</div>
+                  <div class="infoOfApp__item">Адресс: {{rezult.addres}}</div>
+                  <div class="infoOfApp__item">Этаж: {{rezult.floor}}/{{rezult.totalFloors}}</div>
+                </div>
+                <div class="infoOfApp__right">
+                  <div class="infoOfApp__item">Площадь: {{rezult.square}}</div>
+                  <div class="infoOfApp__item">Квартира: {{rezult.numberOfRooms}}</div>
+                </div>
               </div>
-              <div class="infoOfApp__right">
-                <div class="infoOfApp__item">Площадь: 56 м2</div>
-                <div class="infoOfApp__item">Площадь: 56 м2</div>
-                <div class="infoOfApp__item">Площадь: 56 м2</div>
-              </div>
-            </div>
 
 
-            <v-divider class="mx-3"></v-divider>
+              <v-divider class="mx-3"></v-divider>
 
-            <h2>Описание</h2>
-            <p class="text-justify">
-              Morbi mattis ullamcorper velit. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Fusce convallis metus id felis luctus adipiscing. Aenean massa. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus.
+              <h2>Описание</h2>
+              <p class="text-justify">
+                Morbi mattis ullamcorper velit. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Fusce convallis metus id felis luctus adipiscing. Aenean massa. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus.
 
-              Nulla consequat massa quis enim. Praesent venenatis metus at tortor pulvinar varius. Donec venenatis vulputate lorem. Phasellus accumsan cursus velit. Pellentesque ut neque.
-            </p>
-          </v-col>
-           </v-container>
-      </v-container>
+
+                Nulla consequat massa quis enim. Praesent venenatis metus at tortor pulvinar varius. Donec venenatis vulputate lorem. Phasellus accumsan cursus velit. Pellentesque ut neque.
+              </p>
+            </v-col>
+          </v-container>
+        </v-container>
+      </div>
+
     </v-main>
     <my-footer/>
   </v-list>
@@ -85,9 +88,14 @@ export default {
   },
   data() {
     return {
-      advs: frontendData.adv, // Сокращенная инфа об объекте
       profile: frontendData.profile,
-      //logoPath: path.join(__dirname, 'src', 'main', 'webapp', 'resources', 'static', 'logo.png')
+    }
+  },
+  created() {
+    let  advs = frontendData.adv;
+    const rezult = advs.find(rezult => rezult.id == this.$route.params.id)
+    if (rezult) {
+      this.rezult = rezult
     }
   },
   name: "Item"
