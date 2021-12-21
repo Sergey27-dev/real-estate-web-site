@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 import App from 'pages/App.vue'
-
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
-
 import router from './router/router.js';
 import VueRouter from "vue-router";
 
@@ -14,7 +12,9 @@ Vue.use(VueRouter)
 
 new Vue({
     el: '#app',
+
+    vuetify: new Vuetify({}),
     router,
     render: a => a(App),
-    vuetify: new Vuetify({})
+
 })

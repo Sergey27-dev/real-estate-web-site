@@ -1,43 +1,39 @@
 <template>
   <v-container>
-
-
       <v-row class="ma-4">
         <v-tabs
-            
             align-with-title
         >
           <v-tab>Снять</v-tab>
           <v-tab>Купить</v-tab>
           <v-tab>Запрос</v-tab>
         </v-tabs>
-        <div class="search">
-          <v-select
-              outlined
-              label="Тип жилья"
-              :items="type"
-          ></v-select>
-        </div>
-        <div class="search">
+
         <v-select
             outlined
-            :items="rooms"
-            multiple
-            label="Количество комнат"
+            v-model = "type"
+            label="Тип жилья"
+            :items="types"
         ></v-select>
-        </div>
-        <div class="search">
+        <v-text-field
+
+            outlined
+            label="Количество комнат"
+            
+            v-model="rooms"
+        ></v-text-field>
+
         <v-text-field
             outlined
             label="Цена"
+            v-model="price"
         ></v-text-field>
-        </div>
-        <v-btn class="ma-2">Найти</v-btn>
+
+        <v-btn class="ma-2" @click="search">Найти</v-btn>
+
       </v-row>
 
   </v-container>
-
-
 
 </template>
 
@@ -45,14 +41,31 @@
 export default {
   data(){
     return {
-      type: [
+      types: [
           'Квартира', 'Дом'
       ],
 
-      rooms: [
+      room: [
           '1','2','3','4'
-      ]
+      ],
+      type: "",
+      rooms: "",
+      price: ""
 
+    }
+  },
+
+  watch: {
+    searchAttr(oldVal, newVal){
+      this.type = newVal.type
+      this.rooms = newVal.rooms
+      this.price = newVal.price
+    }
+  },
+
+  methods: {
+    search() {
+      this.$router.push({path: "/search-list", query: {type: this.type, rooms: this.rooms, price: this.price}})
     }
   },
 

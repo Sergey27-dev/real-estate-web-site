@@ -8,9 +8,11 @@
           contain
       ></v-img></a>
       <v-icon class="icon">near_me</v-icon>
+
       <v-card-text>8 (999) 999 99 99</v-card-text>
 
-        <v-btn href="/list">Перейти к List</v-btn>
+      <v-btn href="/list">Все объявления</v-btn>
+
 
       <v-spacer/>
       <v-icon class="icon">favorite</v-icon>
@@ -18,7 +20,48 @@
         <v-btn href="/login">Войти</v-btn>
       </div>
       <div v-else>
-        <v-btn text="profile" href="/logout">{{profile.name}}</v-btn>
+        <v-menu
+            top
+            offset-x
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+                color="primary"
+                dark
+                v-bind="attrs"
+                v-on="on"
+            >
+              {{ profile.name }}
+            </v-btn>
+          </template>
+
+          <v-list>
+            <v-list-item>
+              <v-list-item-action>
+                <v-btn
+                    text
+                    color="primary"
+                    href="/new"
+                >
+                  Создать объявление
+                </v-btn>
+              </v-list-item-action>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-action>
+                <v-btn
+                    text
+                    color="primary"
+                    href="/logout"
+                >
+                  Выход
+                </v-btn>
+              </v-list-item-action>
+            </v-list-item>
+
+          </v-list>
+
+        </v-menu>
       </div>
     </v-app-bar>
 
@@ -29,12 +72,6 @@ export default {
   props: [
     'profile'
   ],
-
-  data(){
-    // return{
-    //   imgUrl:
-    // }
-  },
 
   name: "Header"
 }
