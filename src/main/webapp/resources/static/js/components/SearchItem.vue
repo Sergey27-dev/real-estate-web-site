@@ -8,6 +8,7 @@
           <v-tab>Купить</v-tab>
           <v-tab>Запрос</v-tab>
         </v-tabs>
+
         <v-select
             outlined
             v-model = "type"
@@ -15,16 +16,21 @@
             :items="types"
         ></v-select>
         <v-text-field
+
             outlined
             label="Количество комнат"
+            
             v-model="rooms"
         ></v-text-field>
+
         <v-text-field
             outlined
             label="Цена"
             v-model="price"
         ></v-text-field>
+
         <v-btn class="ma-2" @click="search">Найти</v-btn>
+
       </v-row>
 
   </v-container>
@@ -68,5 +74,8 @@ export default {
 </script>
 
 <style scoped>
-
+.search
+{
+  margin: 5px 5px;
+}
 </style>
