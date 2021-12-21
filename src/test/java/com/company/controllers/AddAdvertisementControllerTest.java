@@ -28,16 +28,16 @@ class AddAdvertisementControllerTest {
     void newAdvertisement() throws Exception {
         Advertisement advertisement = new Advertisement();
         advertisement.setName("Michail");
-        advertisement.setPrice(20000);
+        advertisement.setPrice("20000");
         advertisement.setAddres("Космический проспект 20");
         advertisement.setDescription("Description");
-        advertisement.setFloor(5);
-        advertisement.setTotalFloors(10);
-        advertisement.setNumberOfRooms(2);
+        advertisement.setFloor("5");
+        advertisement.setTotalFloors("10");
+        advertisement.setNumberOfRooms("2");
 
 
         mockMvc.perform(
-                        post("/new-adv")
+                        post("/adv")
                                 .content(objectMapper.writeValueAsString(advertisement))
                                 .contentType(MediaType.APPLICATION_JSON)
                 )

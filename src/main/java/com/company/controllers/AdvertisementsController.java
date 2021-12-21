@@ -2,14 +2,14 @@ package com.company.controllers;
 
 
 import com.company.domain.Advertisement;
+import com.company.domain.User;
 import com.company.domain.Views;
 import com.company.repo.AdvertisementRepo;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.lang.Nullable;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,4 +34,18 @@ public class AdvertisementsController {
     public Advertisement getOneAdv(@PathVariable ("id") Advertisement advertisement) {
         return advertisement;
     }
+
+    @GetMapping("/list-adv")
+    public List<Advertisement> getListOfAdv(@RequestParam("type")  String type,
+                                            @RequestParam("rooms")  String rooms,
+                                            @RequestParam("price")  String price,
+                                            @AuthenticationPrincipal User user) {
+        System.out.println(rooms);
+        System.out.println(type);
+        System.out.println(price);
+        return advertisementRepo.findAdvertisementByTypeAndNumberOfRoomsAndPrice(type, rooms, price);
+
+    }
+
+    
 }

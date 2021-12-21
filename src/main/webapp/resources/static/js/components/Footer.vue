@@ -23,21 +23,23 @@
           <v-divider/>
           <div>Продвижение объявлений на сайте можно оплатить любым удобным способом</div>
         </v-col>
-        <v-col cols="3" >
+        <v-col cols="3" class="mr-1">
           <div>КОНТАКТЫ</div>
           <v-divider/>
-          <v-row class="ma-3">
-            <v-icon>phone</v-icon>
-            <div>8 (999) 999 99 99</div>
-          </v-row>
-          <v-row class="ma-3">
-            <v-icon>phone</v-icon>
-            <div>59-59-59</div>
-          </v-row>
-          <v-row class="ma-3">
-            <v-icon>email</v-icon>
-            <div>maison@gmail.com</div>
-          </v-row>
+          <v-container >
+            <v-row class="ma-3">
+              <v-icon>phone</v-icon>
+              <div>8 (999) 999 99 99</div>
+            </v-row>
+            <v-row class="ma-3">
+              <v-icon>phone</v-icon>
+              <div>59-59-59</div>
+            </v-row>
+            <v-row class="ma-3">
+              <v-icon>email</v-icon>
+              <div>maison@gmail.com</div>
+            </v-row>
+          </v-container>
         </v-col>
         <v-col cols="3">
           <div>СОЦИАЛЬНЫЕ СЕТИ</div>

@@ -2,30 +2,29 @@
   <v-container>
       <v-row class="ma-4">
         <v-tabs
-            
             align-with-title
         >
           <v-tab>Снять</v-tab>
           <v-tab>Купить</v-tab>
-          <v-tab>Зарпрос</v-tab>
+          <v-tab>Запрос</v-tab>
         </v-tabs>
         <v-select
             outlined
-
+            v-model = "type"
             label="Тип жилья"
-            :items="type"
-        ></v-select>
-        <v-select
-            outlined
-            :items="rooms"
-            multiple
-            label="Количество комнат"
+            :items="types"
         ></v-select>
         <v-text-field
             outlined
-            label="Цена"
+            label="Количество комнат"
+            v-model="rooms"
         ></v-text-field>
-        <v-btn class="ma-2">Найти</v-btn>
+        <v-text-field
+            outlined
+            label="Цена"
+            v-model="price"
+        ></v-text-field>
+        <v-btn class="ma-2" @click="search">Найти</v-btn>
       </v-row>
 
   </v-container>
@@ -36,14 +35,31 @@
 export default {
   data(){
     return {
-      type: [
+      types: [
           'Квартира', 'Дом'
       ],
 
-      rooms: [
+      room: [
           '1','2','3','4'
-      ]
+      ],
+      type: "",
+      rooms: "",
+      price: ""
 
+    }
+  },
+
+  watch: {
+    searchAttr(oldVal, newVal){
+      this.type = newVal.type
+      this.rooms = newVal.rooms
+      this.price = newVal.price
+    }
+  },
+
+  methods: {
+    search() {
+      this.$router.push({path: "/search-list", query: {type: this.type, rooms: this.rooms, price: this.price}})
     }
   },
 

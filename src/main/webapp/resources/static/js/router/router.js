@@ -1,16 +1,24 @@
-import Vue from 'vue'
 import VueRouter from 'vue-router'
-import App from "../pages/App.vue";
-import Auth from "../pages/Auth.vue";
+import Item from '../pages/Item.vue'
+import List from '../pages/List.vue'
+import MainPage from "../pages/MainPage.vue";
+import Vue from "vue";
+import NewItem from "../pages/NewItem.vue";
+import ListOfSearch from "../pages/ListOfSearch.vue";
+import UserAdv from "../pages/UserAdv.vue";
 
 Vue.use(VueRouter)
-
-const routes = [
-    // { path: '/', component: App },
-    { path: '/jopa', component: Auth }
-]
-
 export default new VueRouter({
-    mode:'history',
-    routes
+    routes : [
+        { path: '/', component: MainPage },
+        { path: '/list', component: List },
+        { path: '/item', component: Item },
+        { path: '/new', component: NewItem},
+        { path: '/search-list', component: ListOfSearch},
+        { path: '/my-adv', component: UserAdv},
+        { path: '*', component: MainPage },
+    ],
+
+    mode: 'history',
+
 })

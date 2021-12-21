@@ -21,19 +21,19 @@ public class Advertisement {
     private String name;
 
     @JsonView(Views.ShortInformation.class)
-    private int price;
+    private String price;
 
     @JsonView(Views.ShortInformation.class)
-    private int numberOfRooms;
+    private String numberOfRooms;
 
     @JsonView(Views.FullInformation.class)
-    private int square;
+    private String square;
 
     @JsonView(Views.FullInformation.class)
-    private int floor;
+    private String floor;
 
     @JsonView(Views.FullInformation.class)
-    private int totalFloors;
+    private String totalFloors;
 
     @JsonView(Views.FullInformation.class)
     private String addres;
@@ -43,4 +43,13 @@ public class Advertisement {
 
     @JsonView(Views.FullInformation.class)
     private LocalDateTime dateOfPlacement;
+
+    @JsonView(Views.FullInformation.class)
+    private String type;
+
+    @JsonView(Views.FullInformation.class)
+    private String longDescription;
+
+    @JsonView(Views.FullInformation.class)
+    private String userEmail;
 }
