@@ -5,6 +5,7 @@ import MainPage from "../pages/MainPage.vue";
 import Vue from "vue";
 import NewItem from "../pages/NewItem.vue";
 import ListOfSearch from "../pages/ListOfSearch.vue";
+import UserAdv from "../pages/UserAdv.vue";
 
 Vue.use(VueRouter)
 export default new VueRouter({
@@ -14,6 +15,7 @@ export default new VueRouter({
         { path: '/item', component: Item },
         { path: '/new', component: NewItem},
         { path: '/search-list', component: ListOfSearch},
+        { path: '/my-adv', component: UserAdv},
         { path: '*', component: MainPage },
     ],
 

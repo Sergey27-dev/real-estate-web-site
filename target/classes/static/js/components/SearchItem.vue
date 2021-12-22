@@ -14,13 +14,6 @@
             label="Тип жилья"
             :items="types"
         ></v-select>
-<!--        <v-select-->
-<!--            outlined-->
-<!--            v-model = "rooms"-->
-<!--            :items="room"-->
-<!--            multiple-->
-<!--            label="Количество комнат"-->
-<!--        ></v-select>-->
         <v-text-field
             outlined
             label="Количество комнат"

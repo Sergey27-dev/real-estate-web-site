@@ -46,8 +46,10 @@
 <script>
 export default {
   props: ['advs'],
+
   name: "Element"
 }
+
 </script>
 
 <style scoped>

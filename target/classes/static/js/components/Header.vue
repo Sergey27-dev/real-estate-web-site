@@ -50,6 +50,19 @@
                 </v-btn>
               </v-list-item-action>
             </v-list-item>
+
+            <v-list-item>
+              <v-list-item-action>
+                <v-btn
+                    text
+                    color="primary"
+                    href="/my-adv"
+                >
+                  Мои объявления
+                </v-btn>
+              </v-list-item-action>
+            </v-list-item>
+
             <v-list-item>
               <v-list-item-action>
                 <v-btn

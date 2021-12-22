@@ -17,4 +17,9 @@ public interface AdvertisementRepo extends JpaRepository<Advertisement, Long> {
             @Param("price") String price
     );
 
+    @Query("select a from Advertisement a where a.userEmail = :email")
+    List<Advertisement> findByUserEmail(
+      @Param("email") String email
+    );
+
 }
