@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar height="90px">
+    <v-app-bar height="90px" color="white">
       <a href="http://localhost:9000"><v-img
           class="mx-2"
           :src="require(`../../../assets/logo.png`)"
@@ -11,7 +11,7 @@
 
       <v-card-text>8 (999) 999 99 99</v-card-text>
 
-      <v-btn href="/list">Все объявления</v-btn>
+      <v-btn plain href="/list">Все объявления</v-btn>
 
       <v-spacer/>
       <v-icon class="icon">favorite</v-icon>

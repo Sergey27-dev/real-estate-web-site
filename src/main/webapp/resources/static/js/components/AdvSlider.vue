@@ -1,20 +1,22 @@
 <template>
     <v-sheet
         class="mx-auto"
-        elevation="8"
+        elevation="5"
         >
       <v-slide-group
           active-class="success"
           class="pa-4"
-          show-arrows="always"
+          center-active
+          show-arrows
       >
-          <v-slide-item
+        <v-slide-item
               v-for="adv in advs"
               :key="adv.id"
               style="margin: 20px"
               v-slot="{ active, toggle }"
           >
-            <v-card
+            <router-link :to="{ name: 'itemPage', params: { id: adv.id } } " class="item"><v-card
+
                 @click="toggle"
                 class="ma-4"
                 max-width="400"
@@ -29,7 +31,8 @@
               <v-card-title>{{adv.price}}</v-card-title>
 
 
-            </v-card>
+            </v-card></router-link>
+
           </v-slide-item>
 
       </v-slide-group>
@@ -49,5 +52,7 @@ export default {
 </script>
 
 <style scoped>
-
+.item{
+  text-decoration: none;
+}
 </style>

@@ -90,10 +90,9 @@
                   src="https://img.icons8.com/ios-filled/50/000000/vk-circled.png"/>
             </a>
           </div>
-          <v-img
-              height="120"
-              :src="require(`../../../assets/logo.png`)"
-          />
+          <v-img height="120"
+                 :src="require(`../../../assets/logo.png`)" />
+          <div class="text-right">&copy; {{ new Date().getFullYear() }}</div>
         </v-col>
       </v-row>
     </v-container>

@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <my-header :profile="profile"/>
-    <v-container>
+    <v-container class="tcfc">
       <v-form
           ref="form"
           v-model="valid"
@@ -72,16 +72,19 @@
         Создать
       </v-btn>
     </v-container>
+    <my-footer/>
   </v-app>
 
 
 </template>
 
 <script>
+import MyFooter from "../components/Footer.vue"
 import MyHeader from "../components/Header.vue"
 export default {
   components: {
-    MyHeader
+    MyHeader,
+    MyFooter
   },
   data() {
     return {
@@ -146,5 +149,8 @@ export default {
 </script>
 
 <style scoped>
-
+.tcfc
+{
+  width: 500px;
+}
 </style>
