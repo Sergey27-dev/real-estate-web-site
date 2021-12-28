@@ -8,6 +8,7 @@
           <v-tab>Купить</v-tab>
           <v-tab>Запрос</v-tab>
         </v-tabs>
+
         <v-select
             outlined
             v-model = "type"
@@ -15,16 +16,27 @@
             :items="types"
         ></v-select>
         <v-text-field
+
             outlined
             label="Количество комнат"
+            
             v-model="rooms"
         ></v-text-field>
+
         <v-text-field
             outlined
-            label="Цена"
-            v-model="price"
+            label="Цена от"
+            v-model="price_ot"
         ></v-text-field>
+
+        <v-text-field
+            outlined
+            label="Цена до"
+            v-model="price_do"
+        ></v-text-field>
+
         <v-btn class="ma-2" @click="search">Найти</v-btn>
+
       </v-row>
 
   </v-container>
@@ -44,7 +56,8 @@ export default {
       ],
       type: "",
       rooms: "",
-      price: ""
+      price_ot: "",
+      price_do: ""
 
     }
   },
@@ -53,13 +66,16 @@ export default {
     searchAttr(oldVal, newVal){
       this.type = newVal.type
       this.rooms = newVal.rooms
-      this.price = newVal.price
+      this.price_ot = newVal.price_ot
+      this.price_do = newVal.price_do
     }
   },
 
   methods: {
     search() {
-      this.$router.push({path: "/search-list", query: {type: this.type, rooms: this.rooms, price: this.price}})
+
+      this.$router.push({path: "/search-list", query: {type: this.type, rooms: this.rooms, price_ot: this.price_ot,
+      price_do: this.price_do}})
     }
   },
 
@@ -68,5 +84,8 @@ export default {
 </script>
 
 <style scoped>
-
+.search
+{
+  margin: 5px 5px;
+}
 </style>

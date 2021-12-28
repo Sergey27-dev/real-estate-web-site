@@ -37,6 +37,11 @@ module.exports = {
                 ]
             },
 
+            {
+                test: /.(?:ico|gif|png|jpg|jpeg)$/i,
+                type: 'asset/resource',
+            },
+
 
         ]
     },
@@ -48,6 +53,7 @@ module.exports = {
             path.join(__dirname, 'src', 'main', 'webapp','resources', 'static', 'js'),
             path.join(__dirname, 'src', 'main', 'webapp','resources'),
             path.join(__dirname, 'node_modules'),
+            path.join(__dirname, 'src', 'images')
         ],
     }
 }

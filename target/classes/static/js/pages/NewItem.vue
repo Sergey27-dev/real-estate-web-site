@@ -67,7 +67,20 @@
             label="Описание"
             required
         ></v-text-field>
+
+
       </v-form>
+<!--      <v-file-input-->
+<!--          v-model="files"-->
+<!--          placeholder="Загрузите фото"-->
+<!--          label="фото"-->
+<!--          small-chips-->
+<!--          show-size-->
+<!--          counter-->
+<!--          @change="onFileSelected"-->
+
+<!--      ></v-file-input>-->
+      <upload-images @changed = "handleImages"/>
       <v-btn @click="save" href="/">
         Создать
       </v-btn>
@@ -79,9 +92,12 @@
 
 <script>
 import MyHeader from "../components/Header.vue"
+import UploadImages from "vue-upload-drop-images"
+
 export default {
   components: {
-    MyHeader
+    MyHeader,
+    UploadImages
   },
   data() {
     return {
@@ -99,7 +115,8 @@ export default {
       totalFloors: "",
       adres: "",
       description:"",
-      longDescription: ""
+      longDescription: "",
+      file: null
 
     }
   },
@@ -116,11 +133,15 @@ export default {
       this.adres = newVal.adres
       this.description = newVal.description
       this.longDescription = newVal.longDescription
-
-
     }
   },
   methods: {
+    handleImages(files) {
+      this.file = files
+      console.log(files)
+      console.log(this.file)
+    },
+
     save() {
       const adv = {
         name: this.name,
@@ -132,10 +153,15 @@ export default {
         floor: this.floorm,
         addres: this.adres,
         description: this.description,
-        longDescription: this.longDescription
+        longDescription: this.longDescription,
       }
-
-      this.$resource('/new-adv{/id}').save({}, adv)
+      this.$resource('/new-adv').save({},adv)
+      console.log(this.file)
+      this.$http.post('/new-adv/photo', {file: this.file}).then(result => {
+        console.log(result)
+      }, errorCollback => {
+        console.log(errorCollback)
+      })
     }
 
   },

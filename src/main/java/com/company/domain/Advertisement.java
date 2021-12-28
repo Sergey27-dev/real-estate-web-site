@@ -5,7 +5,9 @@ import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.File;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Table
 @Entity
@@ -21,7 +23,7 @@ public class Advertisement {
     private String name;
 
     @JsonView(Views.ShortInformation.class)
-    private String price;
+    private int price;
 
     @JsonView(Views.ShortInformation.class)
     private String numberOfRooms;
@@ -52,4 +54,7 @@ public class Advertisement {
 
     @JsonView(Views.FullInformation.class)
     private String userEmail;
+
+//    @Transient
+//    private List<File> files;
 }

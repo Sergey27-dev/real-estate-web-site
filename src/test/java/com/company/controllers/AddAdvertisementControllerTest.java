@@ -28,7 +28,6 @@ class AddAdvertisementControllerTest {
     void newAdvertisement() throws Exception {
         Advertisement advertisement = new Advertisement();
         advertisement.setName("Michail");
-        advertisement.setPrice("20000");
         advertisement.setAddres("Космический проспект 20");
         advertisement.setDescription("Description");
         advertisement.setFloor("5");

@@ -25,15 +25,17 @@ export default {
       advs: [],
       type: "",
       rooms: "",
-      price: "",
+      price_ot: "",
+      price_do: ""
     }
   },
   created() {
 
     this.type = this.$route.query.type
     this.rooms = this.$route.query.rooms
-    this.price = this.$route.query.price
-    this.$http.get('/adv/list-adv',{params: { type: this.type, rooms: this.rooms, price: this.price}}).then(result =>
+    this.price_ot = this.$route.query.price_ot
+    this.price_do = this.$route.query.price_do
+    this.$http.get('/adv/list-adv',{params: { type: this.type, rooms: this.rooms, price_ot: this.price_ot, price_do: this.price_do}}).then(result =>
         result.json().then(data => {
           this.advs = data
         }))

@@ -38,12 +38,14 @@ public class AdvertisementsController {
     @GetMapping("/list-adv")
     public List<Advertisement> getListOfAdv(@RequestParam("type")  String type,
                                             @RequestParam("rooms")  String rooms,
-                                            @RequestParam("price")  String price,
+                                            @RequestParam("price_ot")  String price_ot,
+                                            @RequestParam("price_do") String price_do,
                                             @AuthenticationPrincipal User user) {
-        System.out.println(rooms);
-        System.out.println(type);
-        System.out.println(price);
-        return advertisementRepo.findAdvertisementByTypeAndNumberOfRoomsAndPrice(type, rooms, price);
+        int price_from = 0;
+        int price_to = 0;
+        if(price_ot != "")price_from = Integer.parseInt(price_ot);
+        if(price_do != "")price_to = Integer.parseInt(price_do);
+        return advertisementRepo.findAdvertisementByTypeAndNumberOfRoomsAndPrice(type, rooms, price_from, price_to);
 
     }
 
