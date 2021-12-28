@@ -15,16 +15,11 @@
             label="Тип жилья"
             :items="types"
         ></v-select>
-<!--        <v-select-->
-<!--            outlined-->
-<!--            v-model = "rooms"-->
-<!--            :items="room"-->
-<!--            multiple-->
-<!--            label="Количество комнат"-->
-<!--        ></v-select>-->
         <v-text-field
+
             outlined
             label="Количество комнат"
+            
             v-model="rooms"
         ></v-text-field>
 
@@ -33,6 +28,7 @@
             label="Цена"
             v-model="price"
         ></v-text-field>
+
         <v-btn class="ma-2" @click="search">Найти</v-btn>
 
       </v-row>

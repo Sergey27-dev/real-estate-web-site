@@ -2,7 +2,7 @@
     <v-app-bar max-height="80px">
       <a href="http://localhost:9000"><v-img
           class="mx-2"
-          src="logo.svg"
+          src="..//..//..//assets//icons//logo.svg"
           max-height="140"
           max-width="140"
           contain
@@ -12,7 +12,6 @@
       <v-card-text>8 (999) 999 99 99</v-card-text>
 
       <v-btn href="/list">Все объявления</v-btn>
-
 
       <v-spacer/>
       <v-icon class="icon">favorite</v-icon>
@@ -47,6 +46,19 @@
                 </v-btn>
               </v-list-item-action>
             </v-list-item>
+
+            <v-list-item>
+              <v-list-item-action>
+                <v-btn
+                    text
+                    color="primary"
+                    href="/my-adv"
+                >
+                  Мои объявления
+                </v-btn>
+              </v-list-item-action>
+            </v-list-item>
+
             <v-list-item>
               <v-list-item-action>
                 <v-btn

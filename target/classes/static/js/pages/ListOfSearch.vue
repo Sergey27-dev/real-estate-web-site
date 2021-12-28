@@ -1,40 +1,47 @@
 <template>
-  <v-app>
+  <v-list>
     <my-header :profile="profile"/>
-    <v-container>
-      <element :advs="advs"/>
-    </v-container>
-  </v-app>
-
+    <v-main>
+      <v-container>
+        <h2>Объявления</h2>
+        <div>
+          Найдено {{advs.length}}
+        </div>
+        <my-element :advs="advs"/>
+      </v-container>
+    </v-main>
+  </v-list>
 </template>
 
 <script>
 import MyHeader from "../components/Header.vue"
-import Element from "../components/Element.vue";
+import MyElement from "../components/Element.vue";
+import SearchItem from "../components/SearchItem.vue";
 
 export default {
   components: {
     MyHeader,
-    Element
+    MyElement,
+    SearchItem
   },
   data() {
     return {
+      profile: frontendData.profile,
       advs: [],
       type: "",
       rooms: "",
-      price: ""
+      price: "",
     }
   },
   created() {
-    const profile = frontendData.profile
+
     this.type = this.$route.query.type
     this.rooms = this.$route.query.rooms
     this.price = this.$route.query.price
     this.$http.get('/adv/list-adv',{params: { type: this.type, rooms: this.rooms, price: this.price}}).then(result =>
         result.json().then(data => {
-          this.advs.push(data)
-        })
-    )
+          this.advs = data
+        }))
   },
   name: "ListOfSearch"
 }

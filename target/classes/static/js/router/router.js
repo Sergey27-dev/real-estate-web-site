@@ -7,11 +7,12 @@ import NotFound from "../pages/404.vue";
 import Vue from "vue";
 import NewItem from "../pages/NewItem.vue";
 import ListOfSearch from "../pages/ListOfSearch.vue";
+import UserAdv from "../pages/UserAdv.vue";
 
 Vue.use(VueRouter)
 export default new VueRouter({
     routes : [
-{ 
+        { 
             path: '/new', 
             component: NewItem
         },
@@ -45,6 +46,7 @@ export default new VueRouter({
             name: 'us',
             component: Us
         }
+
     ],
 
     mode: 'history',

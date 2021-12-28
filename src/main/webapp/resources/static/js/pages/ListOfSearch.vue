@@ -4,6 +4,9 @@
     <v-main>
       <v-container>
         <h2>Объявления</h2>
+        <div>
+          Найдено {{advs.length}}
+        </div>
         <my-element :advs="advs"/>
       </v-container>
     </v-main>
@@ -13,11 +16,13 @@
 <script>
 import MyHeader from "../components/Header.vue"
 import MyElement from "../components/Element.vue";
+import SearchItem from "../components/SearchItem.vue";
 
 export default {
   components: {
     MyHeader,
-    MyElement
+    MyElement,
+    SearchItem
   },
   data() {
     return {

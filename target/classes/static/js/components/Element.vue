@@ -60,15 +60,14 @@
 
 <script>
 export default {
-  props: {
-    advs: {
-      type: Array,
-      default: () => []
-    }
-  },
+
+  props: ['advs'],
+
+
 
   name: "Element"
 }
+
 </script>
 
 <style scoped>

@@ -38,13 +38,13 @@
 
               <div class="infoOfApp">
                 <div class="infoOfApp__left">
-                  <div class="infoOfApp__item">Сообщение: {{rezult.name}}</div>
+                  <div class="infoOfApp__item">Наименование: {{rezult.name}}</div>
                   <div class="infoOfApp__item">Адресс: {{rezult.addres}}</div>
                   <div class="infoOfApp__item">Этаж: {{rezult.floor}}/{{rezult.totalFloors}}</div>
                 </div>
                 <div class="infoOfApp__right">
                   <div class="infoOfApp__item">Площадь: {{rezult.square}}</div>
-                  <div class="infoOfApp__item">Квартира: {{rezult.numberOfRooms}}</div>
+                  <div class="infoOfApp__item">Количество комнат: {{rezult.numberOfRooms}}</div>
                 </div>
               </div>
 

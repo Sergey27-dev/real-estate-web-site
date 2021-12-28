@@ -1,10 +1,10 @@
 <template>
-    <v-app-bar max-height="80px">
+    <v-app-bar height="90px">
       <a href="http://localhost:9000"><v-img
           class="mx-2"
-          src="logo.svg"
-          max-height="140"
-          max-width="140"
+          :src="require(`../../../assets/logo.png`)"
+          height="90"
+          width="140"
           contain
       ></v-img></a>
       <v-icon class="icon">near_me</v-icon>
