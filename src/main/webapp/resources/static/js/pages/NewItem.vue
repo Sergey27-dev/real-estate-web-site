@@ -68,21 +68,12 @@
 
 
       </v-form>
-<!--      <v-file-input-->
-<!--          v-model="files"-->
-<!--          placeholder="Загрузите фото"-->
-<!--          label="фото"-->
-<!--          small-chips-->
-<!--          show-size-->
-<!--          counter-->
-<!--          @change="onFileSelected"-->
-
-<!--      ></v-file-input>-->
-      <upload-images @changed = "handleImages" type="file"/>
-      <v-btn @click="save" href="/">
+    </v-container>
+      <upload-images @changed = "handleImages" type="file" class="uploder"/>
+      <v-btn @click="save" href="/" class="ma-7">
         Создать
       </v-btn>
-    </v-container>
+
     <my-footer/>
   </v-app>
 
@@ -186,5 +177,10 @@ export default {
 .tcfc
 {
   width: 500px;
+}
+
+.uploder
+{
+  max-height: 300px;
 }
 </style>

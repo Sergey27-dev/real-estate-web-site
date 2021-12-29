@@ -39,12 +39,14 @@
           v-model="rooms"
       ></v-text-field>
       <v-text-field
+          background-color="white"
           outlined
           label="Цена от"
           v-model="price_ot"
       ></v-text-field>
 
       <v-text-field
+          background-color="white"
           outlined
           label="Цена до"
           v-model="price_do"
