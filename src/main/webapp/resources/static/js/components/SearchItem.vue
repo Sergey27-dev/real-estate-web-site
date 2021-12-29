@@ -25,32 +25,37 @@
         </v-tab-item>
       </v-tabs-items>-->
 
-      <v-select
-          outlined
-          background-color="white"
-          v-model = "type"
-          label="Тип жилья"
-          :items="types"
-      ></v-select>
-      <v-text-field
-          background-color="white"
-          outlined
-          label="Количество комнат"
-          v-model="rooms"
-      ></v-text-field>
-      <v-text-field
-          background-color="white"
-          outlined
-          label="Цена от"
-          v-model="price_ot"
-      ></v-text-field>
 
-      <v-text-field
-          background-color="white"
-          outlined
-          label="Цена до"
-          v-model="price_do"
-      ></v-text-field>
+        <v-select
+            class="col-3"
+            outlined
+            background-color="white"
+            v-model = "type"
+            label="Тип жилья"
+            :items="types"
+        ></v-select>
+        <v-text-field
+            class="col-3"
+            background-color="white"
+            outlined
+            label="Количество комнат"
+            v-model="rooms"
+        ></v-text-field>
+        <v-text-field
+            class="col-3"
+            background-color="white"
+            outlined
+            label="Цена от"
+            v-model="price_ot"
+        ></v-text-field>
+
+        <v-text-field
+            class="col-3"
+            background-color="white"
+            outlined
+            label="Цена до"
+            v-model="price_do"
+        ></v-text-field>
 
     </v-row>
       <v-btn align="right" class="ma-2" @click="search">Найти</v-btn>
@@ -68,7 +73,7 @@ export default {
       types: [
           'Квартира', 'Дом'
       ],
-      searchItem:['Снять','Купить','Запрос'],
+      searchItem:['Снять','Купить'],
       room: [
           '1','2','3','4'
       ],
