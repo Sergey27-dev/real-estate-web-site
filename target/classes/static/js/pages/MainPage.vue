@@ -1,12 +1,13 @@
 <template>
   <v-app>
     <my-header :profile="profile"/>
-    <search-item/>
+
+    <div class="image"><search-item/></div>
     <v-main>
       <v-container>
         <h2>Лучшие предложения</h2>
         <div>Подберите подходящую квартиру или дом просмотрев лучшие предложения</div>
-        <adv-slider :advs="advs"/>
+        <v-hover><adv-slider :advs="advs"/></v-hover>
       </v-container>
       <v-divider style="margin: 50px" />
       <v-container>
@@ -31,11 +32,13 @@ export default {
     SearchItem,
     AdvSlider,
     AboutUs,
+
     MyFooter
   },
 
   data() {
     return {
+
       advs: frontendData.adv, // Сокращенная инфа об объекте
       profile: frontendData.profile
       // logoPath: path.join(__dirname, 'src', 'main', 'webapp', 'resources', 'static', 'logo.png')
@@ -44,4 +47,14 @@ export default {
 }
 
 </script>
-<style scoped></style>
+<style scoped>
+
+.image
+{
+  height: 500px;
+
+  background-position: center;
+  background-image: url(https://archello.s3.eu-central-1.amazonaws.com/images/2017/07/03/CapdAilFranceapart2010-10.1507275926.0821.jpg)
+}
+
+</style>

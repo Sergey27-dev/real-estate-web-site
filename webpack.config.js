@@ -25,6 +25,10 @@ module.exports = {
                 }
             },
             {
+                test: /\.(?:ico|gif|png)$/i,
+                type: 'asset/resource',
+            },
+            {
                 test: /\.vue$/,
                 loader: 'vue-loader'
             },

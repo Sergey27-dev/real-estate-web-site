@@ -1,10 +1,10 @@
 <template>
-    <v-app-bar max-height="80px">
+    <v-app-bar height="90px" color="white">
       <a href="http://localhost:9000"><v-img
           class="mx-2"
-          src="logo.svg"
-          max-height="140"
-          max-width="140"
+          :src="require(`../../../assets/logo.png`)"
+          height="90"
+          width="140"
           contain
       ></v-img></a>
       <v-app-bar-nav-icon>
@@ -20,7 +20,7 @@
 
       <v-card-text>8 (999) 999 99 99</v-card-text>
 
-      <v-btn href="/list">Все объявления</v-btn>
+      <v-btn plain href="/list">Все объявления</v-btn>
 
       <v-spacer/>
       <v-icon class="icon">favorite</v-icon>

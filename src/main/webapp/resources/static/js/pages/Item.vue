@@ -3,8 +3,8 @@
     <my-header :profile="profile"/>
     <v-main>
       <div class="container">
-        <v-container>
           <v-container>
+
             <v-img max-height="300"
                    max-width="500"
                    src="https://mykaleidoscope.ru/uploads/posts/2021-03/1616731497_9-p-krasivie-dorogie-kvartiri-11.jpg">
@@ -38,7 +38,7 @@
 
               <div class="infoOfApp">
                 <div class="infoOfApp__left">
-                  <div class="infoOfApp__item">Сообщение: {{rezult.name}}</div>
+                  <div class="infoOfApp__item">Наименование: {{rezult.name}}</div>
                   <div class="infoOfApp__item">Адресс: {{rezult.addres}}</div>
                   <div class="infoOfApp__item">Этаж: {{rezult.floor}}/{{rezult.totalFloors}}</div>
                 </div>
@@ -54,11 +54,10 @@
               <h2>Описание</h2>
               <p class="text-justify">
                 {{rezult.longDescription}}
-
               </p>
             </v-col>
+
           </v-container>
-        </v-container>
       </div>
 
     </v-main>
@@ -111,7 +110,9 @@ export default {
   font-weight: 400;
   font-size: 18px;
 }
-
+.toggleContainerLeftWidth_Half {
+  overflow: hidden;
+}
 .infoOfApp
 {
   background-color: white;

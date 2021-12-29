@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <my-header :profile="profile"/>
-    <v-container>
+    <v-container class="tcfc">
       <v-form
           ref="form"
       >
@@ -83,19 +83,23 @@
         Создать
       </v-btn>
     </v-container>
+    <my-footer/>
   </v-app>
 
 
 </template>
 
 <script>
+import MyFooter from "../components/Footer.vue"
 import MyHeader from "../components/Header.vue"
 import UploadImages from "vue-upload-drop-images"
 
 export default {
   components: {
     MyHeader,
-    UploadImages
+    UploadImages,
+    MyFooter
+
   },
   data() {
     return {
@@ -179,5 +183,8 @@ export default {
 </script>
 
 <style scoped>
-
+.tcfc
+{
+  width: 500px;
+}
 </style>

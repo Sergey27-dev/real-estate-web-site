@@ -13,6 +13,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import MyElement from "../components/Element.vue";
 import MyHeader from "../components/Header.vue"
 export default {
@@ -20,6 +21,9 @@ export default {
     MyHeader,
     MyElement
   },
+=======
+export default {
+>>>>>>> 2f6240ece3d13a10a0e94ac2773e2a5db8e6106e
   data() {
     return {
       profile: frontendData.profile,
@@ -27,6 +31,7 @@ export default {
     }
 
   },
+<<<<<<< HEAD
 
   created() {
     const profile = frontendData.profile
@@ -36,6 +41,8 @@ export default {
         })
     )
   },
+=======
+>>>>>>> 2f6240ece3d13a10a0e94ac2773e2a5db8e6106e
   name: "UserAdv"
 }
 </script>

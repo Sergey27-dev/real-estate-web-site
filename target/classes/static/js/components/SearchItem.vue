@@ -1,43 +1,59 @@
 <template>
   <v-container>
-      <v-row class="ma-4">
-        <v-tabs
-            align-with-title
+    <div class="serc"><v-row align="center" class="ma-4">
+      <v-tabs
+          v-model="tab"
+          dark
+          align="center"
+          show-arrows
+      >
+        <v-tabs-slider color="white"></v-tabs-slider>
+
+        <v-tab
+            v-for="sech in searchItem"
+            :key="sech"
         >
-          <v-tab>Снять</v-tab>
-          <v-tab>Купить</v-tab>
-          <v-tab>Запрос</v-tab>
-        </v-tabs>
+          {{ sech }}
+        </v-tab>
+      </v-tabs>
 
-        <v-select
-            outlined
-            v-model = "type"
-            label="Тип жилья"
-            :items="types"
-        ></v-select>
-        <v-text-field
+      <!--<v-tabs-items v-model="tab">
+        <v-tab-item v-for="item in items" :key="item.tab">
+          <v-card flat>
+            <v-card-text>{{ item.content }}</v-card-text>
+          </v-card>
+        </v-tab-item>
+      </v-tabs-items>-->
 
-            outlined
-            label="Количество комнат"
-            
-            v-model="rooms"
-        ></v-text-field>
+      <v-select
+          outlined
+          background-color="white"
+          v-model = "type"
+          label="Тип жилья"
+          :items="types"
+      ></v-select>
+      <v-text-field
+          background-color="white"
+          outlined
+          label="Количество комнат"
+          v-model="rooms"
+      ></v-text-field>
+      <v-text-field
+          outlined
+          label="Цена от"
+          v-model="price_ot"
+      ></v-text-field>
 
-        <v-text-field
-            outlined
-            label="Цена от"
-            v-model="price_ot"
-        ></v-text-field>
+      <v-text-field
+          outlined
+          label="Цена до"
+          v-model="price_do"
+      ></v-text-field>
 
-        <v-text-field
-            outlined
-            label="Цена до"
-            v-model="price_do"
-        ></v-text-field>
+    </v-row>
+      <v-btn align="right" class="ma-2" @click="search">Найти</v-btn>
+    </div>
 
-        <v-btn class="ma-2" @click="search">Найти</v-btn>
-
-      </v-row>
 
   </v-container>
 
@@ -50,7 +66,7 @@ export default {
       types: [
           'Квартира', 'Дом'
       ],
-
+      searchItem:['Снять','Купить','Запрос'],
       room: [
           '1','2','3','4'
       ],
@@ -84,8 +100,5 @@ export default {
 </script>
 
 <style scoped>
-.search
-{
-  margin: 5px 5px;
-}
+
 </style>
