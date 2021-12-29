@@ -10,12 +10,6 @@ import java.util.List;
 
 @Repository
 public interface AdvertisementRepo extends JpaRepository<Advertisement, Long> {
-//    @Query("select a from Advertisement a where a.type = :type and a.numberOfRooms = :rooms and a.price < :price or a.type = :type and a.numberOfRooms = :rooms or a.type = :type and a.price < :price")
-//    List<Advertisement> findAdvertisementByTypeAndNumberOfRoomsAndPrice(
-//            @Param("type") String type,
-//            @Param("rooms") String rooms,
-//            @Param("price") String price
-//    );
 
     @Query("select a from Advertisement a where " +
             "?1 <> '' and a.type = ?1 or ?2 <> '' and a.numberOfRooms = ?2 or" +

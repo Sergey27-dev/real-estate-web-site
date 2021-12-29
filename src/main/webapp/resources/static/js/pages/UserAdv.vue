@@ -13,7 +13,13 @@
 </template>
 
 <script>
+import MyElement from "../components/Element.vue";
+import MyHeader from "../components/Header.vue"
 export default {
+  components: {
+    MyHeader,
+    MyElement
+  },
   data() {
     return {
       profile: frontendData.profile,

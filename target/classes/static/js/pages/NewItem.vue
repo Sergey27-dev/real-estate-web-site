@@ -4,8 +4,6 @@
     <v-container>
       <v-form
           ref="form"
-          v-model="valid"
-          lazy-validation
       >
         <v-text-field
             v-model="name"
@@ -80,7 +78,7 @@
 <!--          @change="onFileSelected"-->
 
 <!--      ></v-file-input>-->
-      <upload-images @changed = "handleImages"/>
+      <upload-images @changed = "handleImages" type="file"/>
       <v-btn @click="save" href="/">
         Создать
       </v-btn>
@@ -136,11 +134,11 @@ export default {
     }
   },
   methods: {
-    handleImages(files) {
-      this.file = files
-      console.log(files)
-      console.log(this.file)
-    },
+    // handleImages(files) {
+    //   this.file = files
+    //   console.log(files)
+    //   console.log(this.file)
+    // },
 
     save() {
       const adv = {
@@ -155,13 +153,22 @@ export default {
         description: this.description,
         longDescription: this.longDescription,
       }
-      this.$resource('/new-adv').save({},adv)
-      console.log(this.file)
-      this.$http.post('/new-adv/photo', {file: this.file}).then(result => {
+
+      this.$resource('/new-adv').save({},adv).then(result => {
         console.log(result)
-      }, errorCollback => {
-        console.log(errorCollback)
       })
+
+
+      // const formData = new FormData()
+      // formData.append("file", this.file)
+      // this.$http.post('/new-adv/photo', {file: this.file}).then(result => {
+      //   console.log(result)
+      // }, errorCollback => {
+      //   console.log(errorCollback)
+      // })
+
+
+
     }
 
   },

@@ -49,8 +49,8 @@ public class AdvertisementsController {
 
     }
 
-    @GetMapping("/uesr-adv")
-    public List<Advertisement> getuserAdv(@RequestParam("email") String email) {
+    @GetMapping("/user-adv")
+    public List<Advertisement> getUserAdv(@RequestParam("email") String email) {
         return advertisementRepo.findByUserEmail(email);
     }
 }
